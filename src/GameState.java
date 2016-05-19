@@ -1,6 +1,9 @@
 import GameWindow.GameWindow;
+import GameWindow.SpriteSheet;
 
 public class GameState {
+	
+	static SpriteSheet blocks = new SpriteSheet();
 
 	public GameState() {
 	}
