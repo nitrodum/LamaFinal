@@ -7,6 +7,8 @@ public class GameState {
 
 	public static void main(String[] args) {
 		GameWindow frame = new GameWindow("Ninja Run", 1080, 720);
+		frame.setFullscreen(1);
+		frame.setVisible(true);
 	}
 
 }
