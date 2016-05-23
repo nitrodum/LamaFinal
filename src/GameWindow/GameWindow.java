@@ -43,7 +43,7 @@ public class GameWindow extends JFrame {
 			setFullscreen();
 		}else{
 			System.err.println("Error " + newMode + " is not supported");
-		
+		 
 		}
 	}
 
