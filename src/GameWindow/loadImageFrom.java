@@ -17,6 +17,7 @@ public class loadImageFrom {
 			img = ImageIO.read(url);
 		}catch(IOException e){
 			e.printStackTrace();
+			System.out.println("OUCH");
 		}
 		return img;
 	}
