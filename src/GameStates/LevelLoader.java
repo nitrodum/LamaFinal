@@ -30,7 +30,6 @@ public class LevelLoader extends GameState {
 
 	@Override
 	public void render(Graphics2D g) {
-		g.drawString("Hello", 200, 200);
 		map.render(g);
 		
 	}

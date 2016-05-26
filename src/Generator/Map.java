@@ -6,11 +6,13 @@ import java.awt.image.BufferedImage;
 import GameWindow.Vector2F;
 import GameWindow.loadImageFrom;
 import Generator.Block.BlockType;
+import MoveableObject.Player;
 import main.Main;
 
 public class Map {
 	
 	TileManager tiles = new TileManager();
+	Player player = new Player();
 	
 
 	public Map(){
@@ -18,6 +20,8 @@ public class Map {
 	}
 	
 	public void init(){
+		player.init();
+		
 		BufferedImage map = null;
 		
 		try{		
@@ -45,10 +49,12 @@ public class Map {
 	
 	public void tick(double deltaTime){
 		tiles.tick(deltaTime);
+		player.tick(deltaTime);
 	}
 	
 	public void render(Graphics2D g){
 		tiles.render(g);
+		player.render(g);
 	}
 
 }

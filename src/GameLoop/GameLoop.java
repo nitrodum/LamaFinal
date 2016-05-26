@@ -11,8 +11,7 @@ public class GameLoop extends NLGameLoop {
 	
 	GameStateManager gsm;
 	public static Assets assets = new Assets();
-	public static float xOffset;
-	public static float yOffset;
+	public static Vector2F map = new Vector2F();
 
 	public GameLoop(int width, int height) {
 		super(width, height);
@@ -21,7 +20,7 @@ public class GameLoop extends NLGameLoop {
 	@Override
 	public void init() {
 		assets.init();
-		Vector2F.setWorldVaribles(xOffset, yOffset);
+		
 		gsm = new GameStateManager();
 		gsm.init();
 		super.init();
@@ -29,6 +28,7 @@ public class GameLoop extends NLGameLoop {
 	
 	@Override
 	public void tick(double deltaTime) {
+		Vector2F.setWorldVaribles(map.x, map.y);	
 		gsm.tick(deltaTime);
 	}
 	

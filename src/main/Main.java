@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import GameLoop.GameLoop;
 import GameWindow.GameWindow;
 import GameWindow.SpriteSheet;
+import MoveableObject.Player;
 
 
 
@@ -22,6 +23,7 @@ public class Main {
 	public static void main(String[] args) {
 		GameWindow frame = new GameWindow("Ninja Run", width, height);
 		frame.setFullscreen(1);
+		frame.addKeyListener(new Player());
 		frame.add(new GameLoop(width, height));
 		frame.setVisible(true);	
 		}
