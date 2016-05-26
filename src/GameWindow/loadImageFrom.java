@@ -10,14 +10,14 @@ import javax.imageio.ImageIO;
 public class loadImageFrom {
 
 	public static BufferedImage LoadImageFrom(Class<?> classFile, String path) {
-		URL url = classFile.getResource(path);
-		BufferedImage img = null;
 		
-		try{
+		BufferedImage img = null;
+		URL url = classFile.getResource(path);
+		System.out.println(url);
+		try{		
 			img = ImageIO.read(url);
 		}catch(IOException e){
 			e.printStackTrace();
-			System.out.println("OUCH");
 		}
 		return img;
 	}

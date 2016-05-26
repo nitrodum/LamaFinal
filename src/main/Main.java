@@ -24,6 +24,6 @@ public class Main {
 		frame.setFullscreen(1);
 		frame.add(new GameLoop(width, height));
 		frame.setVisible(true);	
-	}
+		}
 
 }
