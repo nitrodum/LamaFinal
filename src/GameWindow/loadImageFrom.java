@@ -13,7 +13,6 @@ public class loadImageFrom {
 		
 		BufferedImage img = null;
 		URL url = classFile.getResource(path);
-		System.out.println(url);
 		try{		
 			img = ImageIO.read(url);
 		}catch(IOException e){

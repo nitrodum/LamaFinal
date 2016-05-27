@@ -21,7 +21,7 @@ public class NLGameLoop extends JPanel implements Runnable {
 	public Graphics2D graphics2D;
 	private BufferedImage img;
 	
-	public static double currentFPS = 120D;
+	public static double currentFPS = 60D;
 
 	public NLGameLoop(int width, int height){
 		this.width = width;

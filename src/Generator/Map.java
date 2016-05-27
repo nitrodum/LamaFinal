@@ -39,8 +39,9 @@ public class Map {
 				case 0x808080:
 					tiles.blocks.add(new Block(new Vector2F(x*32, y*32), BlockType.STONE_1 ));
 					break;
+				case 0x404040:
+					tiles.blocks.add(new Block(new Vector2F(x*32, y*32), BlockType.WALL_1).isSolid(true));
 				}
-				
 				}
 			}
 		

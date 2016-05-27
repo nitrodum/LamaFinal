@@ -7,7 +7,7 @@ import GameWindow.Vector2F;
 
 public class TileManager {
 	
-	public ArrayList<Block> blocks = new ArrayList<Block>();
+	public static ArrayList<Block> blocks = new ArrayList<Block>();
 
 	public TileManager() {
 		
