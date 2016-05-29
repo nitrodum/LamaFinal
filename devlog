@@ -3,3 +3,24 @@ devlog
 day 1
 Made a devlog
 added window
+
+day 2 
+made game fullscreen
+
+day 3
+added gamestate and gameloop
+added spritesheet and sprite reader class
+
+day 4
+made map and level 
+made blocks
+added a player class
+
+day 5 
+made player object move with player input
+
+day 6
+added collision detection 
+added moving animations
+
+day 
