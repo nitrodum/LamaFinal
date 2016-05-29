@@ -20,6 +20,7 @@ public class Player implements KeyListener {
 	Vector2F pos;
 	private int width = 42;
 	private int height = 42;
+	private int scale = 2;
 	private static boolean up, down, left, right;
 	private float maxSpeed = 3 * 32F;
 	// TODO
@@ -242,28 +243,28 @@ public class Player implements KeyListener {
 		g.clipRect(0, 0, Main.width, Main.height);
 		
 		if(animationState == 0){
-			g.drawImage(ani_up.sprite, (int) pos.x, (int) pos.y, width, height, null);
+			g.drawImage(ani_up.sprite, (int) pos.x - width/2, (int) pos.y - height, width*scale, height*scale, null);
 			if(up){
 			ani_up.update(System.currentTimeMillis());
 			}
 		}
 		
 		if(animationState == 1){
-			g.drawImage(ani_down.sprite, (int) pos.x, (int) pos.y, width, height, null);
+			g.drawImage(ani_down.sprite, (int) pos.x - width/2, (int) pos.y - height, width*scale, height*scale, null);
 			if(down){
 				ani_down.update(System.currentTimeMillis());
 				}
 		}
 		
 		if(animationState == 2){
-			g.drawImage(ani_left.sprite, (int) pos.x, (int) pos.y, width, height, null);
+			g.drawImage(ani_left.sprite, (int) pos.x - width/2, (int) pos.y - height, width*scale, height*scale, null);
 			if(left){
 				ani_left.update(System.currentTimeMillis());
 				}
 		}
 		
 		if(animationState == 3){
-			g.drawImage(ani_right.sprite, (int) pos.x, (int) pos.y, width, height, null);
+			g.drawImage(ani_right.sprite, (int) pos.x - width/2, (int) pos.y - height , width*scale, height*scale, null);
 			if(right){
 				ani_right.update(System.currentTimeMillis());
 				}

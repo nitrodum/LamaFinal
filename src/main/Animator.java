@@ -29,7 +29,6 @@ public class Animator {
 				}catch(IndexOutOfBoundsException e){
 					currentFrame = 0;
 					sprite = frames.get(currentFrame);
-					e.printStackTrace();
 				}
 				prevTime = time;
 			}
