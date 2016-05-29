@@ -41,6 +41,10 @@ public class Map {
 					break;
 				case 0x404040:
 					tiles.blocks.add(new Block(new Vector2F(x*32, y*32), BlockType.WALL_1).isSolid(true));
+					break;
+				case 0x303030:
+					tiles.blocks.add(new Block(new Vector2F(x*32, y*32), BlockType.FENCE_1).isSolid(true));
+					break;
 				}
 				}
 			}

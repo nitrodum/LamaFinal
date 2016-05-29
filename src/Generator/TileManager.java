@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 import GameWindow.Vector2F;
+import MoveableObject.Player;
 
 public class TileManager {
 	
@@ -16,6 +17,12 @@ public class TileManager {
 	public void tick(double deltaTime){
 		for(Block block : blocks){
 			block.tick(deltaTime);
+			
+			if(Player.render.intersects(block)){
+				block.setAlive(true);
+				}else{
+					block.setAlive(false);
+				}
 		}
 	}
 	

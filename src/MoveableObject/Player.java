@@ -3,6 +3,7 @@ package MoveableObject;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -18,8 +19,8 @@ import main.Main;
 public class Player implements KeyListener {
 
 	Vector2F pos;
-	private int width = 42;
-	private int height = 42;
+	private int width = 32;
+	private int height = 32;
 	private int scale = 2;
 	private static boolean up, down, left, right;
 	private float maxSpeed = 3 * 32F;
@@ -33,8 +34,12 @@ public class Player implements KeyListener {
 	private float slowDown = 32 * 0.1F;
 
 	private float fixDT = 1f / 60F;
+	private int renderDistanceWidth = 60;
+	private int renderDistanceHeight = 24;
+	public static Rectangle render;
+	
 
-	private int animationState = 0;
+	private int animationState = 1;
 	
 	/*
 	 * 0 = up
@@ -58,6 +63,13 @@ public class Player implements KeyListener {
 	}
 
 	public void init() {
+		
+		render = new Rectangle(
+				(int)(pos.x - pos.getWorldLocation().x + pos.x - renderDistanceWidth*32 / 2 + width/2),
+				(int)(pos.y - pos.getWorldLocation().y + pos.y - renderDistanceHeight*32 /2 + height/2),
+				renderDistanceWidth*32,
+				renderDistanceHeight*32);
+		
 		listUp = new ArrayList<BufferedImage>();
 		listDown = new ArrayList<BufferedImage>();
 		listLeft = new ArrayList<BufferedImage>();
@@ -99,6 +111,12 @@ public class Player implements KeyListener {
 	}
 
 	public void tick(double deltaTime) {
+		
+		render = new Rectangle(
+				(int)(pos.x - pos.getWorldLocation().x + pos.x - renderDistanceWidth*32 / 2 + width/2),
+				(int)(pos.y - pos.getWorldLocation().y + pos.y - renderDistanceHeight*32 /2 + height/2),
+				renderDistanceWidth*32,
+				renderDistanceHeight*32);
 
 		float moveAmountUp = (float) (speedUp * fixDT);
 		float moveAmountDown = (float) (speedDown * fixDT);
@@ -235,7 +253,7 @@ public class Player implements KeyListener {
 	
 
 	public void render(Graphics2D g) {
-		g.fillRect((int) pos.x, (int) pos.y, width, height);
+		
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Main.width, Main.height/6);
 		g.fillRect(0, 900, Main.width, Main.height/6);
@@ -269,6 +287,7 @@ public class Player implements KeyListener {
 				ani_right.update(System.currentTimeMillis());
 				}
 		}
+		
 	}
 
 	@Override
